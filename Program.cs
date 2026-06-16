@@ -13,7 +13,11 @@ class Program
             if (input.ToLower() == "exit")
                 break;
 
-            double num1 = Convert.ToDouble(input);
+            if (!double.TryParse(input, out double num1))
+            {
+                Console.WriteLine("Invalid input.");
+                continue;
+            }
 
             Console.WriteLine("Enter second number: ");
             
@@ -62,6 +66,8 @@ class Program
 
             }
 
+            
+         
             Console.WriteLine();
 
 
